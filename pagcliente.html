@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de cliente</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="diseños/registro_usuarios.css">
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <style>
+        body{
+            background-image: url("Imagenes/paisaje8.png");
+            background-size: cover;
+        }
+
+        .encabezado{
+            background-image: url("Imagenes/paisaje8.png");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="columns">
+            <div class="column">
+                <figure class="image is-128x128">
+                    <img class="is-rounded" src="Imagenes/logocafeteria.png">
+                </figure>
+            </div>
+            <div class="column" id="titulohead">
+              NEGOCIO DE CAFETERIA
+            </div>
+            <div class="column">
+              </div>
+        </div>
+    </header>
+    
+    <br>
+    <h1 id="titulo">BIENVENIDO A LA PÁGINA DE MI NEGOCIO DE CAFETERIA</h1>
+    <br>
+
+    <h1 class="subtitulos">NEGOCIO DE CAFETERIA</h1>
+    <br>
+
+    <p class="subtitulos">Ingrese los datos que se le piden:</p>
+    <br>
+
+    <div class="card card-width='100'" id="CardFormulario">
+        <header class="card-header">
+          <p class="card-header-title">
+            Formulario de registro de cliente:
+          </p>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <form action='api/index.php/cliente' method='POST'>
+                    <label for=nombre_cliente>Ingresa tu nombre completo:</label>
+                    <input id="nombre_cliente" class="input" type="text" name="nombre_cliente" placeholder="nombre completo">
+                    <label for=nombre_de_usuario>Ingresa un nombre de usuario:</label>
+                    <input id="nombre_de_usuario" class="input" type="text" name="nombre_de_usuario" placeholder="usuario">
+                    <label for=correo_electronico>Ingresa tu correo electronico:</label>
+                    <input id="correo_electronico" class="input" type="text" name="correo_electronico" placeholder="correo electronico">
+                    <label for=password_cliente>Ingresa tu contraseña:</label>
+                    <input id="password_cliente" class="input" type="password" name="password_cliente" placeholder="contraseña">
+                    <label for=id_usuario>Ingresa el número de usuario que te corresponde:</label>
+                    <input id="id_usuario" class="input" type="text" name="id_usuario" placeholder="número de usuario">
+                    <div>
+                       <button class="button is-dark" type="button" onclick="cliente()">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        function cliente (){
+            axios.post('api/index.php/cliente', {
+                nombre_cliente: document.forms[0].nombre_cliente.value,
+                nombre_de_usuario: document.forms[0].nombre_de_usuario.value,
+                correo_electronico: document.forms[0].correo_electronico.value,
+                password_cliente: document.forms[0].password_cliente.value,
+                id_usuario: document.forms[0].id_usuario.value
+            }).then(resp => {
+                alert(`Se han insertado correctamente los datos uwu\nRealicemos tu pedido :3`)
+                setTimeout(`location. href='realizar_pedido.php'`, 500)
+                console.log(resp)
+            }).catch(error => {
+                alert(`Los datos no se han ingresado correctamente, vuelva a intentarlo`)
+            });
+        }
+    </script>
+      
+</body>
+</html>

@@ -1,0 +1,54 @@
+header{
+    width: 100%;
+}
+
+/*Encabezado de la página de registros*/
+.encabezado{
+    border: solid 1px;
+    border-color: white;
+    padding: 10px;
+}
+
+/*Titulo del header*/
+#titulohead{
+    font-family: cursive;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+
+}
+
+/*Titulo de página*/
+#titulo{
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    font-family: cursive;
+    padding: 10px;
+}
+
+/*Subtitulos de página*/
+.subtitulos{
+    font-size: 18px;
+    color: black;
+    text-align: left;
+    font-family: cursive;
+    margin-left: 15px;
+    padding: 5px;
+}
+
+#CardFormulario{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cardstext{
+    font-size: 18px;
+    color: black;
+}
+
+.cardstext2{
+    font-size: 18px;
+    color: white;
+    padding: 8px;
+}
