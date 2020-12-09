@@ -1,0 +1,12 @@
+{
+  "name": "cafeterianegv4",
+  "version": "1.0.0",
+  "description": "Es un sistema para mi negocio de cafeteria",
+  "main": "index.js",
+  "author": "Pedroadrian20 <am0166653@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bulma": "^0.9.1"
+  }
+}

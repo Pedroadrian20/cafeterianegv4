@@ -1,0 +1,16 @@
+{
+    "name": "am152/cafeterianegv4",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Pedroadrian20",
+            "email": "am0166653@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^8.15",
+        "illuminate/events": "^8.15",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.2"
+    }
+}
